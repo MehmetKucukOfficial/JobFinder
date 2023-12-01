@@ -23,6 +23,8 @@ app.set('view engine', 'ejs'); // set view engine to ejs
 
 //Middleware
 app.use(express.static('public')); // set static folder
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 //Routes
 app.use('/', pageRouter);
